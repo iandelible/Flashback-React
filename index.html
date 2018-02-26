@@ -11,7 +11,14 @@
     <link rel="stylesheet" type="text/css" href="index.css"></link>
   </head>
   <body>
-    <h1>HELLO WORLD</h1>
+    <div id="app"></div>
+    <!-- according to babel setup instructions: Compiling in the browser has a fairly limited use case,
+    so if you are working on a production site you should be precompiling your scripts server-side-->
+    <!-- this application will use a in-broswer compliation stategy. this script tag allows the inclusion of ES6 JavaScript -->
+    <script type="text/babel">
+    ReactDOM.render(<h1>HELLO WORLD</h1>, document.getElementById('app'));
+    </script>
+
   </body>
 
 </html>
