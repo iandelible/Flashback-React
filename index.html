@@ -16,7 +16,20 @@
     so if you are working on a production site you should be precompiling your scripts server-side-->
     <!-- this application will use a in-broswer compliation stategy. this script tag allows the inclusion of ES6 JavaScript -->
     <script type="text/babel">
-    ReactDOM.render(<h1>HELLO WORLD</h1>, document.getElementById('app'));
+    var App = function() {
+      return (
+        <div className='App'>
+          <h1 className='title'>
+            Flashback
+          </h1>
+          <p className='sub-title'>
+            An interactive flashcard app.
+          </p>
+        </div>
+      );
+    };
+
+    ReactDOM.render(App(), document.getElementById('app'));
     </script>
 
   </body>
