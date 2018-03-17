@@ -7,6 +7,7 @@
     <!-- react and react-dom libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.development.js"></script>
+    <script src="flashcardData.js"></script>
     <!-- links index.css fille in the same directory to this index.html file -->
     <link rel="stylesheet" type="text/css" href="index.css"></link>
   </head>
@@ -16,12 +17,7 @@
     so if you are working on a production site you should be precompiling your scripts server-side-->
     <!-- this application will use a in-broswer compliation stategy. this script tag allows the inclusion of ES6 JavaScript -->
     <script type="text/babel">
-    var cardData = {
-      front: {
-        question: 'You may know that React was created at ________',
-        hint: 'This company\'s site is known for being written in PHP.'
-      }
-    };
+    const cardData = importedFlashCardDataFile
 
     class App extends React.Component {
       render() {
@@ -34,7 +30,7 @@
               An interactive flashcard app.
             </p>
             <div className='card-list'>
-              <Card front={cardData.front} />
+              {cardData.map((card) => <Card front={card.front} />)}
             </div>
           </div>
         );
